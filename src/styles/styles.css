@@ -1,0 +1,207 @@
+/* Estilos del componente welcome */
+
+.container-welcome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    color: white;
+    background-color: #4DD4C4;
+}
+
+    .container-title{
+        margin-top: -50px;
+    }
+
+        .icon-donate{
+            width: 350px;
+        }
+
+        .subtitle-app{
+            color: white;
+            font-size: 18px;
+            font-family: 'Lora';
+            text-align: center;
+        }
+
+    .container-button{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .btn-iniciar{
+            height: 50px;
+            width: 300px;
+            background-color: #17B093;
+            border-radius: 5px;
+            border: 1px solid white;
+            color: #fff;
+            font-family: 'Lora';
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-iniciar:hover{
+            background-color: #0f8b75;
+        }
+
+        .p-singup{
+            font-family: 'Lora';
+            font-size: 16px;
+        }
+
+            .p-singup a{
+                color: #fff;
+                text-align: center;
+            }
+
+            .p-singup a:hover{
+                color: blueviolet;
+            }
+
+
+/* Estilos del componente register */
+
+.container-register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+    .container-back{
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 93%;
+        margin-top: 10px;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+        .container-back img{
+            width: 20px;
+            cursor: none;
+        }
+
+        .container-back p{
+            font-family: 'Lora';
+        }
+
+    /* .container-logo{
+
+    } */
+        .icon-donate-register{
+            width: 250px;
+        }
+
+    .form-register{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .title-register{
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Roboto';
+        }
+
+        .form-register input{
+            width: 250px;
+            margin-bottom: 20px;
+            height: 29px;
+            padding: 5px;
+            font-family: 'Lora';
+            border-radius: 5px;
+            border: 1px solid #444;
+        }
+
+        .container-btn-register{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+            .btn-register{
+                height: 50px;
+                width: 300px;
+                background-color: #17B093;
+                border-radius: 5px;
+                border: 1px solid white;
+                color: #fff;
+                font-family: 'Lora';
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .btn-register:hover{
+                background-color: #0f8b75;
+            }
+
+            .text-term{
+                text-align: center;
+                font-family: 'Lora';
+                font-size: 12px;
+            }
+
+/* Estilos componente Login */
+
+            .icon-donate-login{
+                width: 250px;
+                margin-top: 50px;
+            }
+
+.form-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+    .title-login{
+        text-align: center;
+        font-size: 28px;
+        font-family: 'Roboto'; 
+        margin-bottom: 60px;
+    }
+
+    .form-login input{
+        width: 250px;
+        margin-bottom: 20px;
+        height: 29px;
+        padding: 5px;
+        font-family: 'Lora';
+        border-radius: 5px;
+        border: 1px solid #444;
+    }
+
+    .container-btn-login{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-login{
+        height: 50px;
+        width: 300px;
+        background-color: #17B093;
+        border-radius: 5px;
+        border: 1px solid white;
+        color: #fff;
+        font-family: 'Lora';
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .btn-login:hover{
+        background-color: #0f8b75;
+    }
+
+    .text-password a{
+        text-align: center;
+        font-family: 'Lora';
+        text-decoration: none;
+    }
