@@ -1,0 +1,82 @@
+.container-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-back {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 93%;
+  margin-top: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.container-back img {
+  width: 20px;
+  cursor: none;
+}
+
+.container-back p {
+  font-family: "Lora";
+}
+
+/* .container-logo{
+
+  } */
+.icon-donate-register {
+  width: 250px;
+}
+
+.form-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-register {
+  text-align: center;
+  font-size: 30px;
+  font-family: "Roboto";
+}
+
+.form-register input {
+  width: 250px;
+  margin-bottom: 20px;
+  height: 29px;
+  padding: 5px;
+  font-family: "Lora";
+  border-radius: 5px;
+  border: 1px solid #444;
+}
+
+.container-btn-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-register {
+  height: 50px;
+  width: 300px;
+  background-color: #17b093;
+  border-radius: 5px;
+  border: 1px solid white;
+  color: #fff;
+  font-family: "Lora";
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-register:hover {
+  background-color: #0f8b75;
+}
+
+.text-term {
+  text-align: center;
+  font-family: "Lora";
+  font-size: 12px;
+}

@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppDonate from './containers/AppDonate';
-import './styles/styles.css'
+import AppRouter from './routers/AppRouter';
+// import './styles/index.css';
+// import './styles/inicio.css';
+// import './styles/login.css';
+// import './styles/normalize.css';
+// import './styles/register.css';
+// import './styles/welcome.css'
 
-ReactDOM.render(
+ReactDOM.render (
   <React.StrictMode>
-    <AppDonate />
+    <AppRouter />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,0 +1,56 @@
+.icon-donate-login {
+  width: 250px;
+  margin-top: 50px;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.title-login {
+  text-align: center;
+  font-size: 28px;
+  font-family: "Roboto";
+  margin-bottom: 60px;
+}
+
+.form-login input {
+  width: 250px;
+  margin-bottom: 20px;
+  height: 29px;
+  padding: 5px;
+  font-family: "Lora";
+  border-radius: 5px;
+  border: 1px solid #444;
+}
+
+.container-btn-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-login {
+  height: 50px;
+  width: 300px;
+  background-color: #17b093;
+  border-radius: 5px;
+  border: 1px solid white;
+  color: #fff;
+  font-family: "Lora";
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background-color: #0f8b75;
+}
+
+.text-password a {
+  text-align: center;
+  font-family: "Lora";
+  text-decoration: none;
+}
