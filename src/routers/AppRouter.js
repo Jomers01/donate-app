@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { HashRouter as Router, Switch } from "react-router-dom";
 import PrivateRouter from "./PrivateRouter";
 import PublicRouter from "./PublicRouter";
@@ -6,8 +7,23 @@ import Welcome from "../components/sign_in/Welcome";
 import "../styles/styles.css";
 import Register from "../components/sign_in/Register";
 import Login from "../components/sign_in/Login";
+import { collection, getDocs } from "firebase/firestore";
+import db from "../firebase";
 
 function AppRouter() {
+    useEffect(() => {
+        const obtenerDaros = async()=> {
+            const datos = await getDocs(collection(db, 'usuarios'));
+            datos.forEach((documento)=> {
+                console.log(documento.data());
+            })
+        }
+
+        obtenerDaros()
+    }, [])
+
+    
+    
   const isAuth = false;
 
   return (
