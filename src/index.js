@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './routers/AppRouter';
-// import './styles/index.css';
-// import './styles/inicio.css';
-// import './styles/login.css';
-// import './styles/normalize.css';
-// import './styles/register.css';
-// import './styles/welcome.css'
+import moment from 'moment';
+import 'moment/locale/es';
+import './styles/index.css';
+import './styles/reset.css';
+
+moment.locale('es');
 
 ReactDOM.render (
   <React.StrictMode>
@@ -14,3 +14,4 @@ ReactDOM.render (
   </React.StrictMode>,
   document.getElementById('root')
 );
+ 

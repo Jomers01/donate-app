@@ -1,0 +1,167 @@
+/* ------------ Perfil ------------ */
+.perfil-container {
+  padding: 2rem 2rem;
+}
+
+/* ------------ UserInfo ------------ */
+.user-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-info__img {
+  border-radius: 2.8rem;
+  width: min(9rem, 50%);
+  height:9rem; 
+  background-color: rgb(138, 138, 138);
+}
+
+.user-info__data {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+.user-info__data__name {
+  font-size: 2rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: Ellipsis;
+  margin: 0;
+}
+
+.user-info__data__email {
+  font-size: 1.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: Ellipsis;
+  width: 100%;
+  text-align: center;
+}
+
+.user-contact {
+  margin: 2rem 0 .5rem;
+  background-color: lightgray;
+}
+
+user-time {
+  margin: 0;
+}
+
+
+/* ------------ Insignias ------------ */
+.line {
+  margin-top: 2rem;
+}
+
+.line-bottom {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.insignias {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.insignia-container__logo {
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: .2rem;
+}
+
+.insignia-container__number {
+  color: #09413a;
+  font-weight: bold;
+  font-size: .9rem;
+  margin: 0;
+}
+
+.insignia-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.5rem;
+  display: flex;
+  cursor: pointer;
+}
+
+/* ------------ Donaciones ------------ */
+.statistics {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-statistic {
+  width: 47%;
+  background-color: #D5DAE0;
+  text-align: center;
+  padding: .6rem;
+  border-radius: .6rem;
+}
+
+.container-statistic__number {
+  margin: 0;
+  margin-bottom: .4rem;
+  color: #13aa98;
+}
+
+.container-statistic__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+/* ------------ EliminarCuenta ------------ */
+
+.deleteAccount {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+
+/* ------------ ModalInsignias ------------ */
+.modal-title {
+  font-size: 1.7rem;
+  text-align: center;
+  margin: auto;
+}
+
+.modal-data {
+  display: flex;
+}
+.modal-data__info {
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.modal-data__logo {
+  width: 6rem;
+  height: 6rem;
+  margin-top: .4rem;
+}
+
+.modal-text {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-insignia-modal {
+  margin: auto!important;
+  background-color: rgb(255, 202, 70)!important;
+  border: goldenrod!important;
+  color: rgb(255, 255, 255)!important;
+  font-weight: bold!important;
+}

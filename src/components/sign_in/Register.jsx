@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { collection, addDoc } from 'firebase/firestore';
+import moment from 'moment';
 import useForm from '../../hooks/useForm';
 import generateHash from '../../helpers/generateHash';
 import db from '../../firebase';
 import '../../styles/register.css';
+
 
 function Register({ usersDb }) {
   const [showPsw, setShowPsw] = useState(false);
@@ -26,14 +28,19 @@ function Register({ usersDb }) {
 
   const addUserToFirebase = async () => {
     try {
-      const docRef = await addDoc(collection(db, 'usuarios'), {
+      await addDoc(collection(db, 'usuarios'), {
         nombre: form.name,
         telefono: form.tel,
         correo: form.email,
         clave: form.password,
+        fecha_creacion: moment().format('MMMM DD YYYY, h:mm:ss a'),
+        imagen: 'https://www.softzone.es/app/uploads/2018/04/guest.png?x=480&quality=20',
+        contactar: '_RED SOCIAL PARA CONTACTAR_',
+        donaciones: [],
+        insignias: [],
         productos: []
       });
-      console.log('Document written with ID: ', docRef.id);
+
     } catch (e) {
       console.error('Error adding document: ', e);
     }

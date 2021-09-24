@@ -6,19 +6,20 @@ import {
 import React, { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import db from '../firebase';
+import IsAuthContext from '../context/isAuthContext';
 import PrivateRouter from './PrivateRouter';
 import PublicRouter from './PublicRouter';
 import Inicio from '../components/inicio/Inicio';
 import Welcome from '../components/sign_in/Welcome';
 import Register from '../components/sign_in/Register';
 import Login from '../components/sign_in/Login';
-import IsAuthContext from '../context/isAuthContext';
-import '../styles/styles.css';
+import Perfil from '../containers/Perfil';
 
 
 function AppRouter() {
   const [isAuth, setIsAuth] = useState(false);
   const [usersDb, setUsersDb] = useState([]);
+  const [activeUser, setActiveUser] = useState(null);
 
   useEffect(() => {
     (async () => {
@@ -30,12 +31,15 @@ function AppRouter() {
 
   }, []);
 
-  console.log(usersDb);
-
   //? CON EL CONTEXO ES NECESARIO isAthenticathed ??????
 
   return (
-    <IsAuthContext.Provider value={{ isAuth: isAuth, setIsAuth: setIsAuth }}>
+    <IsAuthContext.Provider value={{
+      isAuth: isAuth,
+      setIsAuth: setIsAuth,
+      activeUser: activeUser,
+      setActiveUser: setActiveUser
+    }}>
       <Router>
         <Switch>
           <PublicRouter
@@ -56,6 +60,12 @@ function AppRouter() {
             path='/auth/login'
             component={Login}
             usersDb={usersDb}
+            isAuthenticated={isAuth}
+          />
+          <PrivateRouter
+            exact
+            path='/perfil'
+            component={Perfil}
             isAuthenticated={isAuth}
           />
           <PrivateRouter

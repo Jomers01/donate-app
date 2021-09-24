@@ -20,8 +20,9 @@ GUIA DE ESTILOS:
     }
 
 
-
 TODO:
+- PARTIR CODIGO EN COMPONENTES
+- COMPONENTES COMUNES EN COMMON
 - PERFIL COMPLETO CON CRUD
 - GOOGLE, FACEBOOK INICIO DE SESION
 - COMO PROTEGER CONTRASEÑAS CON HASH (Argon 2 o Bcrypt, NO USAR MD5)
@@ -31,5 +32,5 @@ TODO:
 - metodologia BEM A CSS
 - Señalar funciones candidatas a memorizar
 - firestore security
-- 
 - links a imagenes minix
+- USAR FIREBASE_AUTENTICATION para evitar que se vean los usuarios y para recuperar contraseña

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../styles/inicio.css';
 
 function Inicio() {
@@ -9,7 +10,9 @@ function Inicio() {
         <div className="container-nav-top2">
           <input type="text" placeholder="Buscar" />
           <img src="https://res.cloudinary.com/dpkaiokho/image/upload/v1632281997/donate-app/information_htgpiy.png" alt="help" />
-          <img src="https://res.cloudinary.com/dpkaiokho/image/upload/v1632282101/donate-app/menu_wo3klb.png" alt="menu" />
+          <Link to="/perfil">
+            <img src="https://res.cloudinary.com/dpkaiokho/image/upload/v1632282101/donate-app/menu_wo3klb.png" alt="menu" />
+          </Link>
         </div>
       </div>
       <div className="container-setting">

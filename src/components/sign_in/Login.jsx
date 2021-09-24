@@ -1,9 +1,10 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
 import IsAuthContext from '../../context/isAuthContext';
 import generateHash from '../../helpers/generateHash';
+import Back from '../../common/Back/Back';
 import '../../styles/login.css';
+
 
 function Login({ usersDb }) {
   const authContext = useContext(IsAuthContext);
@@ -16,8 +17,14 @@ function Login({ usersDb }) {
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (userExist()) authContext.setIsAuth(true);
-    else alert("No existe (usuario o contraseña incorrecta)"); //TODO:  eliminar
+    const userInfoDb = userExist();
+
+    if (userInfoDb === undefined) {
+      alert("No existe (usuario o contraseña incorrecta)"); //TODO:  eliminar
+    } else {
+      authContext.setIsAuth(true);
+      authContext.setActiveUser(userInfoDb);
+    }
 
     resetForm();
   }
@@ -29,15 +36,16 @@ function Login({ usersDb }) {
   const userExist = () => {
     const hashingPsw = generateHash(form.password);
     console.log("Hash generado: " + hashingPsw);
-    return usersDb.some(user => user.correo === form.email &&
+    return usersDb.find(user => user.correo === form.email &&
       user.clave === hashingPsw);
   }
 
   return (
     <div className='container-register'>
-      <div className='container-back'>
-        <img src='https://res.cloudinary.com/dpkaiokho/image/upload/v1632277154/donate-app/atras_xqhrgc.png' alt='icon-back' />
-        <Link to='/auth'> Volver </Link>
+      <div className='container-bacsk'>
+        {/* <img src='https://res.cloudinary.com/dpkaiokho/image/upload/v1632277154/donate-app/atras_xqhrgc.png' alt='icon-back' />
+        <Link to='/auth'> Volver </Link> */}
+        <Back to='/path' />
       </div>
       <div className='container-logo'>
         <img className='icon-donate-login' src='https://res.cloudinary.com/dpkaiokho/image/upload/v1632274137/donate-app/icon-donate_qox6fj.png' alt='Logo-donate' />

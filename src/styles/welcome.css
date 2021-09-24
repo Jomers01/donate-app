@@ -1,0 +1,60 @@
+.container-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+  color: white;
+  background-color: #4DD4C4;
+}
+
+.container-title {
+  margin-top: -50px;
+}
+
+.icon-donate {
+  width: 350px;
+}
+
+.subtitle-app {
+  color: white;
+  font-size: 18px;
+  font-family: 'Lora';
+  text-align: center;
+}
+
+.container-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-iniciar {
+  height: 50px;
+  width: 300px;
+  background-color: #17B093;
+  border-radius: 5px;
+  border: 1px solid white;
+  color: #fff;
+  font-family: 'Lora';
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-iniciar:hover {
+  background-color: #0f8b75;
+}
+
+.p-singup {
+  font-family: 'Lora';
+  font-size: 16px;
+}
+
+.p-singup a {
+  color: #fff;
+  text-align: center;
+}
+
+.p-singup a:hover {
+  color: blueviolet;
+}
