@@ -1,47 +1,40 @@
 import React, { useState } from 'react';
 import ModalInsignia from './ModalInsignia';
 
-function Insignias() {
+function Insignias({ insignias }) {
   const misLogros = [
     {
-      name: 'Corazon de hierro',
+      nombre: 'Corazon de hierro',
       img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhu2mA5OgXCUJSKQWsjRbCsq8ZYoCF-nu9cGfG-I7ZMu3UNNvzcis1_yDUNF7sFCjgSrY&usqp=CAU',
-      number: 1,
-      text: 'Insignia por tener un corazon de hierro. Por ayudar a los demás y ser una persona noble. Estamos muy contentos de otorgarte esta insigna.'
+      numero: 1,
+      descripcion: 'Insignia por tener un corazon de hierro. Por ayudar a los demás y ser una persona noble. Estamos muy contentos de otorgarte esta insigna.'
     },
     {
-      name: 'Corazon de oro',
+      nombre: 'Corazon de oro',
       img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhu2mA5OgXCUJSKQWsjRbCsq8ZYoCF-nu9cGfG-I7ZMu3UNNvzcis1_yDUNF7sFCjgSrY&usqp=CAU',
-      number: 5,
-      text: 'Insignia por tener un corazon de hierro. Por ayudar a los demás y ser una persona noble. Estamos muy contentos de otorgarte esta insigna.'
+      numero: 5,
+      descripcion: 'Insignia por tener un corazon de hierro. Por ayudar a los demás y ser una persona noble. Estamos muy contentos de otorgarte esta insigna.'
     },
     {
-      name: 'Maestro de la felicidad',
+      nombre: 'Maestro de la felicidad',
       img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhu2mA5OgXCUJSKQWsjRbCsq8ZYoCF-nu9cGfG-I7ZMu3UNNvzcis1_yDUNF7sFCjgSrY&usqp=CAU',
-      number: 10,
-      text: 'Insignia por tener un corazon de hierro. Por ayudar a los demás y ser una persona noble. Estamos muy contentos de otorgarte esta insigna.'
+      numero: 10,
+      descripcion: 'Insignia por tener un corazon de hierro. Por ayudar a los demás y ser una persona noble. Estamos muy contentos de otorgarte esta insigna.'
     },
     {
-      name: 'Ayudante de santa clous',
+      nombre: 'Ayudante de santa clous',
       img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhu2mA5OgXCUJSKQWsjRbCsq8ZYoCF-nu9cGfG-I7ZMu3UNNvzcis1_yDUNF7sFCjgSrY&usqp=CAU',
-      number: 15,
-      text: 'Insignia por tener un corazon de hierro. Por ayudar a los demás y ser una persona noble. Estamos muy contentos de otorgarte esta insigna.'
+      numero: 15,
+      descripcion: 'Insignia por tener un corazon de hierro. Por ayudar a los demás y ser una persona noble. Estamos muy contentos de otorgarte esta insigna.'
     },
   ];
-  /*{
-      nombre del logro
-      imagen del logro
-      puntuacion necesaria para tenerla
-    }
- 
-  */
 
   const [showModal, setShowModal] = useState(false);
   const [infoInsignia, setInfoInsignia] = useState({
-    name: '',
+    nombre: '',
     img: '',
-    number: 0,
-    text: ''
+    numero: 0,
+    descripcion: ''
   });
 
   const handleShowModal = logro => {
@@ -68,7 +61,7 @@ function Insignias() {
                 alt='logro-img'
                 className='insignia-container__logo'
               />
-              <p className='insignia-container__number'> {logro.number} </p>
+              <p className='insignia-container__numero'> {logro.numero} </p>
             </div>
           ))}
         </div>
@@ -78,7 +71,7 @@ function Insignias() {
         showModal={showModal}
         infoInsignia={infoInsignia}
       />
-      <hr className='line-bottom' />
+      <hr classnombre='line-bottom' />
     </section>
   )
 }

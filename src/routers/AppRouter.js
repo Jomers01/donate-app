@@ -3,42 +3,24 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
-import db from '../firebase';
+import React, { useState } from 'react';
 import IsAuthContext from '../context/isAuthContext';
 import PrivateRouter from './PrivateRouter';
 import PublicRouter from './PublicRouter';
-import Inicio from '../components/inicio/Inicio';
-import Welcome from '../components/sign_in/Welcome';
-import Register from '../components/sign_in/Register';
-import Login from '../components/sign_in/Login';
+import Welcome from '../containers/Welcome';
+import Register from '../containers/Register';
+import Login from '../containers/Login';
+import Inicio from '../containers/Inicio';
 import Perfil from '../containers/Perfil';
 
 
 function AppRouter() {
   const [isAuth, setIsAuth] = useState(false);
-  const [usersDb, setUsersDb] = useState([]);
-  const [activeUser, setActiveUser] = useState(null);
-
-  useEffect(() => {
-    (async () => {
-      const datos = await getDocs(collection(db, 'usuarios'));
-      let users = [];
-      datos.forEach(documento => { users.push(documento.data()) });
-      setUsersDb(users);
-    })();
-
-  }, []);
-
-  //? CON EL CONTEXO ES NECESARIO isAthenticathed ??????
 
   return (
     <IsAuthContext.Provider value={{
       isAuth: isAuth,
-      setIsAuth: setIsAuth,
-      activeUser: activeUser,
-      setActiveUser: setActiveUser
+      setIsAuth: setIsAuth
     }}>
       <Router>
         <Switch>
@@ -52,14 +34,12 @@ function AppRouter() {
             exact
             path='/auth/register'
             component={Register}
-            usersDb={usersDb}
             isAuthenticated={isAuth}
           />
           <PublicRouter
             exact
             path='/auth/login'
             component={Login}
-            usersDb={usersDb}
             isAuthenticated={isAuth}
           />
           <PrivateRouter

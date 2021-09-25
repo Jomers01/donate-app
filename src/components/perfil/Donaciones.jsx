@@ -1,17 +1,16 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import moment from 'moment';
 import IsAuthContext from '../../context/isAuthContext';
 
-function Donaciones() {
-  const {activeUser} = useContext(IsAuthContext);
-  const allTimes = activeUser.donaciones.length;
-  const last30days = activeUser.donaciones.filter(e => isCreateInLast30Days(e)).length;
+function Donaciones({ donaciones }) {
+  const allTimes = donaciones;
+  const last30days = donaciones;
 
-  const isCreateInLast30Days = donacion => {
-    const now = moment();
-    const tmp = moment(donacion.fecha, 'MMMM DD YYYY, h:mm:ss a');
-    return (now.diff(tmp) >= 30 ? true : false); 
-  }
+  // const isCreateInLast30Days = donacion => {
+  //   const now = moment();
+  //   const tmp = moment(donacion.fecha, 'MMMM DD YYYY, h:mm:ss a');
+  //   return (now.diff(tmp) >= 30 ? true : false);
+  // }
 
   return (
     <section>

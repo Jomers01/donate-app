@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 function useForm(initialState = {}) {
   const [form, setForm] = useState(initialState);
+
+  const resetForm = () => {
+    setForm(initialState);
+  }
 
   const handleInputChange = e => {
     setForm({
@@ -10,10 +14,6 @@ function useForm(initialState = {}) {
     });
   }
 
-  const resetForm = () => {
-    setForm(initialState);
-  }
-  
   return [form, handleInputChange, resetForm];
 }
 

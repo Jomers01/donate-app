@@ -32,6 +32,8 @@
   overflow: hidden;
   text-overflow: Ellipsis;
   margin: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .user-info__data__email {

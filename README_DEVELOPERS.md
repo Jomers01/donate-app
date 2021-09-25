@@ -34,3 +34,8 @@ TODO:
 - firestore security
 - links a imagenes minix
 - USAR FIREBASE_AUTENTICATION para evitar que se vean los usuarios y para recuperar contraseña
+
+- AL HACER EL DEPLOY ELIMINAR EL DOMINIO: LOCALHOST EN FIREBASE (Dejar solo donde va a quedar ublicado)
+
+- QUE PASA CUANDO NO HAY CONEXION ?
+- DESHABILITAR BOTONES MIENTRAS AY CARGA (Y QUE APREZCA CARGANDO.....)

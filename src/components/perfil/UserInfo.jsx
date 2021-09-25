@@ -1,29 +1,25 @@
-import React, { useContext } from 'react';
-import IsAuthContext from '../../context/isAuthContext';
+import React from 'react';
 import moment from 'moment';
 
-
-function UserInfo() {
-  const {activeUser} = useContext(IsAuthContext);
-  const now = moment(activeUser.fecha_creacion, 'MMMM DD YYYY, h:mm:ss a').fromNow();
+function UserInfo({ currDataUser }) {
+  const now = moment(currDataUser.fecha_creacion, 'MMMM DD YYYY, h:mm:ss a').fromNow();
 
   return (
     <section>
       <div className='user-info'>
         <img
-          src={activeUser.imagen}
+          src={currDataUser.imagen}
           alt='mi-image'
           className='user-info__img'
         />
         <div className='user-info__data'>
-          <p className='user-info__data__name'> {activeUser.nombre} </p>
-          <p className='user-info__data__email' > {activeUser.correo} </p>
+          <p className='user-info__data__name'> {currDataUser.nombre} </p>
+          <p className='user-info__data__email' > {currDataUser.correo} </p>
         </div>
       </div>
 
-      <p className='user-contact'> <i className="far fa-envelope"></i> {activeUser.contactar} </p>
-      <p className='user-time'> <i className="far fa-clock"></i> Te uniste {now} </p>
-      {/* <i class="far fa-paper-plane"></i> */}
+      <p className='user-contact'> <i className='far fa-envelope'></i> {currDataUser.contactar} </p>
+      <p className='user-time'><i className='far fa-paper-plane'></i> Te uniste {now} </p>
     </section>
   )
 }

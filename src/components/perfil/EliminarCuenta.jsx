@@ -1,20 +1,15 @@
-import React, { useContext } from 'react'
+import React from 'react';
 import { Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
-import { doc, deleteDoc } from "firebase/firestore";
-import db from '../../firebase';
-import IsAuthContext from '../../context/isAuthContext';
-
-const MySwal = withReactContent(Swal);
 
 function EliminarCuenta() {
-  const authContext = useContext(IsAuthContext);
+  const MySwal = withReactContent(Swal);
 
   const handleClick = e => {
     MySwal.fire({
       title: '¿Está seguro?',
-      text: "Esta acción es irrevertible y perderá todos sus datos.",
+      text: 'Esta acción es irrevertible y perderá todos sus datos.',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#17b093',
@@ -22,15 +17,8 @@ function EliminarCuenta() {
       cancelButtonText: 'Cancelar',
       confirmButtonText: 'Estoy seguro'
     }).then((result) => {
-      if (result.isConfirmed) {
-        deleteUser(authContext.activeUser.id);
-      }
+      alert('ELIMINAR USER');
     });
-  }
-
-  const deleteUser = id => {
-    deleteDoc(doc(db, 'usuarios', id))
-      .then( _ => { authContext.setIsAuth(false) });
   }
 
   return (
