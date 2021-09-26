@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import './CardProducto.css';
 
 
 function CardProducto({ producto }) {
@@ -18,9 +19,12 @@ function CardProducto({ producto }) {
   const isNew = fecha => {
     const now = moment();
     const tmp = moment(fecha, 'MMMM DD YYYY, h:mm:ss a');
-    return (now.diff(tmp, 'days') <= 2 ? true : false);
+    return (now.diff(tmp, 'days') <= 3 ? true : false);
   }
 
+  const handleClick = () => {
+    alert(JSON.stringify(testing));
+  }
 
   return (
     <div className='container-product-item'>
@@ -29,7 +33,7 @@ function CardProducto({ producto }) {
       <div className='container-description'>
         <h2 className='title-product'> {testing.nombre}</h2>
         <div className='container-user'>
-          <img className='img-usr' src='https://res.cloudinary.com/dpkaiokho/image/upload/v1632284937/donate-app/profile_pkfyif.png' alt='usr' />
+          <img className='img-user' src='https://res.cloudinary.com/dpkaiokho/image/upload/v1632284937/donate-app/profile_pkfyif.png' alt='usr' />
           <p className='text-name-user'> {testing.autor} </p>
         </div>
 
@@ -42,8 +46,9 @@ function CardProducto({ producto }) {
             <img className='img-view' src='https://res.cloudinary.com/dpkaiokho/image/upload/v1632287786/donate-app/view_lapxtx.png' alt='view' />
             <p className='text-view'> VOTOS: {testing.votos} </p>
           </div>
-          <p className='text-state' > {(isNew ? 'nuevo' : 'viejo')} </p>
+          <p className='text-state' > {(isNew() ? 'nuevo' : 'viejo')} </p>
         </div>
+        <button className='btn btn-secondary' onClick={handleClick}> Ver detalle </button>
       </div>
     </div>
   )

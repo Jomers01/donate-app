@@ -7,8 +7,8 @@ function CardsContainer({ productos }) {
   return (
     <div className='container-product'>
       {
-        productos.map((producto, idx) => (
-          <CardProducto producto={producto} key={idx} />
+        productos.map(producto => (
+          <CardProducto producto={producto} key={producto.id} />
         ))
       }      
     </div>

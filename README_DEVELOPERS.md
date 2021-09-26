@@ -82,3 +82,16 @@ querySnapshot.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
   console.log(doc.id, " => ", doc.data());
 });
+
+
+
+
+https://firebase.google.com/docs/auth/web/start?hl=es-419
+
+https://medium.com/@nicomorales297/reactjs-con-firebase-authentication-f74735a54e63
+
+https://platzi.com/blog/reglas-de-seguridad-de-firebase-ejemplo-practico/
+
+https://ichi.pro/es/react-js-firebase-basics-en-ejemplos-228464357978436
+
+reglas de firestore: https://www.youtube.com/watch?v=GLQ76DfRBDE

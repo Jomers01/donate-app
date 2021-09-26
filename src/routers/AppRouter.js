@@ -13,7 +13,7 @@ import Login from '../containers/Login';
 import Inicio from '../containers/Inicio';
 import Perfil from '../containers/Perfil';
 import Crear from '../containers/Crear';
-
+import MisDonaciones from '../containers/MisDonaciones';
 
 function AppRouter() {
   const [isAuth, setIsAuth] = useState(false);
@@ -56,6 +56,12 @@ function AppRouter() {
             exact
             path='/crear'
             component={Crear}
+            isAuthenticated={isAuth}
+          />
+          <PrivateRouter
+            exact
+            path='/mis-donaciones'
+            component={MisDonaciones}
             isAuthenticated={isAuth}
           />
           <PrivateRouter

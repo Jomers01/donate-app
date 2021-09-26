@@ -14,7 +14,7 @@ function Inicio() {
     (async () => {
       const data = await getDocs(collection(db, 'productos'));
       const products = [];
-      data.forEach(product => { products.push(product.data()) });
+      data.forEach(product => { products.push({ id: product.id, ...product.data() }) });
       setProductos(products);
     })();
 
