@@ -3,6 +3,7 @@ import moment from 'moment';
 
 
 function CardProducto({ producto }) {
+
   const testing = producto || {
     nombre: 'nombre del producto',
     autor: 'Jose Garcia',

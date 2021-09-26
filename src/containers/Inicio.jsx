@@ -12,13 +12,12 @@ function Inicio() {
 
   useEffect(() => {
     (async () => {
-      const allProducts = [];
-      getDocs(collection(db, 'productos'))
-        .then(products => {
-          products.forEach(product => { allProducts.push(product.data()) });
-        })
-        setProductos(allProducts);
+      const data = await getDocs(collection(db, 'productos'));
+      const products = [];
+      data.forEach(product => { products.push(product.data()) });
+      setProductos(products);
     })();
+
   }, []);
 
   return (
