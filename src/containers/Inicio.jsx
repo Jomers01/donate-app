@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import NavbarInicio from '../components/inicio/NavbarInicio';
 import Filters from '../components/inicio/Filters';
 import CardsContainer from '../components/inicio/CardsContainer';
 import MenuInicio from '../components/inicio/MenuInicio';
+import { collection, getDocs } from 'firebase/firestore';
+import db from '../firebase';
 import '../styles/inicio.css';
 
 function Inicio() {
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const allProducts = [];
+      getDocs(collection(db, 'productos'))
+        .then(products => {
+          products.forEach(product => { allProducts.push(product.data()) });
+        })
+        setProductos(allProducts);
+    })();
+  }, []);
+
   return (
     <div className='container-inicio'>
       <div className='inicio-app'>
         <NavbarInicio />
         <Filters />
-        <CardsContainer />
+        <CardsContainer productos={productos} />
       </div>
       <MenuInicio />
     </div>

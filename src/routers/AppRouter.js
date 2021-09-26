@@ -12,15 +12,19 @@ import Register from '../containers/Register';
 import Login from '../containers/Login';
 import Inicio from '../containers/Inicio';
 import Perfil from '../containers/Perfil';
+import Crear from '../containers/Crear';
 
 
 function AppRouter() {
   const [isAuth, setIsAuth] = useState(false);
+  const [currUserBasicInfo, setCurrUserBasicInfo] = useState({});
 
   return (
     <IsAuthContext.Provider value={{
       isAuth: isAuth,
-      setIsAuth: setIsAuth
+      setIsAuth: setIsAuth,
+      currUserBasicInfo,
+      setCurrUserBasicInfo
     }}>
       <Router>
         <Switch>
@@ -44,14 +48,20 @@ function AppRouter() {
           />
           <PrivateRouter
             exact
-            path='/perfil'
-            component={Perfil}
+            path='/'
+            component={Inicio}
             isAuthenticated={isAuth}
           />
           <PrivateRouter
             exact
-            path='/'
-            component={Inicio}
+            path='/crear'
+            component={Crear}
+            isAuthenticated={isAuth}
+          />
+          <PrivateRouter
+            exact
+            path='/perfil'
+            component={Perfil}
             isAuthenticated={isAuth}
           />
 

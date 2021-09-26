@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import uploadFile from '../helpers/uploadFile';
 
 function useForm(initialState = {}) {
   const [form, setForm] = useState(initialState);
@@ -14,7 +15,15 @@ function useForm(initialState = {}) {
     });
   }
 
-  return [form, handleInputChange, resetForm];
+  const handleFileChange = async (e) => {
+    const urlCloudinary = await uploadFile(e.target.files[0]);
+    setForm({
+      ...form,
+      [e.target.name]: urlCloudinary
+    });
+  }
+
+  return [form, handleInputChange, resetForm, handleFileChange, setForm];
 }
 
 export default useForm;

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import moment from 'moment';
-import IsAuthContext from '../../context/isAuthContext';
+// import moment from 'moment';
+// import IsAuthContext from '../../context/isAuthContext';
 
 function Donaciones({ donaciones }) {
   const allTimes = donaciones;
@@ -9,7 +9,7 @@ function Donaciones({ donaciones }) {
   // const isCreateInLast30Days = donacion => {
   //   const now = moment();
   //   const tmp = moment(donacion.fecha, 'MMMM DD YYYY, h:mm:ss a');
-  //   return (now.diff(tmp) >= 30 ? true : false);
+  //   return (now.diff(tmp, 'days') >= 30 ? true : false);
   // }
 
   return (

@@ -1,7 +1,9 @@
 import React from 'react';
-import CardProducto from './CardProducto';
+import CardProducto from '../../common/CardProducto/CardProducto';
 
-function CardsContainer() {
+
+function CardsContainer({ products }) {
+  console.log(products);
   return (
     <div className='container-product'>
       <CardProducto />

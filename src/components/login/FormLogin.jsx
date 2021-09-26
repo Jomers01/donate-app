@@ -1,5 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { doc, getDoc } from 'firebase/firestore';
+import db from '../../firebase';
 import IsAuthContext from '../../context/isAuthContext';
 import useForm from '../../hooks/useForm';
 
@@ -14,12 +16,28 @@ function FormLogin() {
     const auth = getAuth();
 
     signInWithEmailAndPassword(auth, form.email, form.password)
-      .then( _ => {
-        authContext.setIsAuth(true);
+      .then(userCredential => {
+        getDoc(doc(db, 'usuarios', userCredential.user.uid))
+          .then(data => {
+            const info = data.data();
+
+            console.log('DATA DE USUAIRO AL LOGIN: ');
+            console.log(info.nombre + ' ' + userCredential.user.uid);
+            console.log('--------------------------');
+
+
+            authContext.setCurrUserBasicInfo({
+              nombre: info.nombre,
+              idUser: userCredential.user.uid
+            });
+
+            authContext.setIsAuth(true);
+          });
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        console.log('Error ' + errorCode + ': ' + errorMessage);
         alert('No existe (usuario o contraseña incorrecta)');
       });
 
@@ -45,6 +63,8 @@ function FormLogin() {
         onChange={handleInputChange}
         placeholder='Contraseña'
         autoComplete='off'
+        minLength='7'
+        maxLength='30'
         required
       />
       <label> Show
@@ -52,8 +72,8 @@ function FormLogin() {
       </label>
 
       <div className='container-btn-login'>
-        <button className='btn-login'>Crear Cuenta</button>
-        <p className='text-password'><a href='#'>¿Olvidaste la contraseña?</a></p>
+        <button className='btn-login'>Iniciar Sesion</button>
+        <p className='text-password'>¿Olvidaste la contraseña?</p>
       </div>
     </form>
   )

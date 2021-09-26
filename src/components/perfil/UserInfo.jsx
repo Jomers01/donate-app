@@ -9,7 +9,7 @@ function UserInfo({ currDataUser }) {
       <div className='user-info'>
         <img
           src={currDataUser.imagen}
-          alt='mi-image'
+          alt='mi imagen'
           className='user-info__img'
         />
         <div className='user-info__data'>
@@ -18,8 +18,14 @@ function UserInfo({ currDataUser }) {
         </div>
       </div>
 
-      <p className='user-contact'> <i className='far fa-envelope'></i> {currDataUser.contactar} </p>
-      <p className='user-time'><i className='far fa-paper-plane'></i> Te uniste {now} </p>
+      <p className='user-contact'>
+        <i className='far fa-paper-plane'></i>
+        {currDataUser.contactar}
+      </p>
+      <p className='user-time'>
+        <i className='far fa-envelope'></i>
+        Te uniste {now}
+      </p>
     </section>
   )
 }

@@ -61,6 +61,7 @@ function FormRegister() {
         onChange={handleInputChange}
         placeholder='Teléfono'
         autoComplete='off'
+        maxLength='15'
         required
       />
       <input
@@ -70,6 +71,7 @@ function FormRegister() {
         onChange={handleInputChange}
         placeholder='Correo'
         autoComplete='off'
+        maxLength='60'
         required
       />
       <input
@@ -79,6 +81,8 @@ function FormRegister() {
         onChange={handleInputChange}
         placeholder='Contraseña'
         autoComplete='off'
+        minLength='7'
+        maxLength='30'
         required
       />
       <label> Show
@@ -90,7 +94,6 @@ function FormRegister() {
         <p className='text-term'>Al crear una cuenta acepta nuestros <a href='/'>Terminos y condiciones</a> </p>
       </div>
     </form>
-
   )
 }
 
